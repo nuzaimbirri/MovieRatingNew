@@ -239,7 +239,10 @@ const ProfilePage = () => {
 						</>
 					)}
 
-					<Posts feedType={feedType} username={username} userId={user?._id}/>
+					{/* Render posts hanya jika feedType bukan watchlist */}
+					{feedType !== "watchlist" && (
+						<Posts feedType={feedType} username={username} userId={user?._id}/>
+					)}
 					{/* Render watchlist jika feedType adalah watchlist */}
 					{feedType === "watchlist" && <Watchlist userId={user?._id} />}
 				</div>
