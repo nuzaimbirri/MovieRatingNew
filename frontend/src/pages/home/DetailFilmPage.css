@@ -1,0 +1,419 @@
+.detail-film-container {
+  max-width: 100%;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.detail-header-section {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  padding: 20px 0;
+}
+
+.navigation-bar {
+  padding: 0 40px;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  padding: 0 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.poster-section {
+  position: relative;
+}
+
+.movie-poster {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.add-watchlist-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  background: #f5c518;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.movie-info-section {
+  color: #ffffff;
+}
+
+.movie-title {
+  font-size: 48px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.movie-meta {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 24px;
+}
+
+.separator {
+  margin: 0 8px;
+}
+
+.rating-container {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.imdb-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-score {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.star-icon {
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: 16px;
+}
+
+.star-icon.filled {
+  color: #f5c518;
+}
+
+.star-icon:hover {
+  transform: scale(1.1);
+}
+
+.score {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.total {
+  color: #999;
+}
+
+.rating-count {
+  color: #999;
+  font-size: 14px;
+}
+
+.user-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #3a3b3c;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.rate-text {
+  color: #999;
+}
+
+.star-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star-button {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-button.active {
+  color: #f5c518;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.rating-label {
+  font-size: 12px;
+  color: #b0b3b8;
+  margin-left: 4px;
+}
+
+.comment-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.comment-rating .star-icon {
+  font-size: 14px;
+  cursor: default;
+}
+
+.comment-rating .rating-value {
+  color: #b0b3b8;
+  font-size: 12px;
+}
+
+.synopsis-section {
+  margin: 32px 0;
+  line-height: 1.6;
+}
+
+.creator-info {
+  margin-top: 32px;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  margin-bottom: 8px;
+}
+
+.label {
+  color: #999;
+}
+
+.link {
+  color: #5799ef;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.comments-section {
+  background: #242526;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px auto;
+  max-width: 1280px;
+}
+
+.comments-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #3a3b3c;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e4e6eb;
+}
+
+.comments-count {
+  color: #b0b3b8;
+}
+
+.comment-form-container {
+  margin-bottom: 32px;
+}
+
+.comment-form-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.comment-form-avatar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.comment-form {
+  flex: 1;
+}
+
+.comment-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  background: #3a3b3c;
+  border: none;
+  border-radius: 8px;
+  color: #e4e6eb;
+  resize: none;
+  margin-bottom: 8px;
+}
+
+.comment-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-length {
+  color: #b0b3b8;
+  font-size: 12px;
+}
+
+.comment-submit-btn {
+  padding: 8px 16px;
+  background: #2374e1;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.comment-item {
+  display: flex;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #3a3b3c;
+}
+
+.comment-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.comment-main {
+  flex: 1;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+  flex-direction: column;
+}
+
+.comment-user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.comment-username {
+  color: #e4e6eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.comment-time {
+  color: #b0b3b8;
+  font-size: 13px;
+}
+
+.comment-user-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #f7b928;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  background: rgba(247, 185, 40, 0.1);
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.comment-star-icon {
+  color: #f7b928;
+  font-size: 14px;
+}
+
+.comment-star-icon.empty {
+  color: #4a4b4d;
+}
+
+.comment-text {
+  color: #e4e6eb;
+  line-height: 1.4;
+  margin: 8px 0;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.comment-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #b0b3b8;
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.comment-action:hover {
+  background: #3a3b3c;
+  color: #e4e6eb;
+}
+
+.comment-rating-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 8px;
+  background: #3a3b3c;
+  border-radius: 8px;
+}
+
+.rating-label {
+  color: #b0b3b8;
+  font-size: 14px;
+}
+
+.comment-star-input {
+  color: #4a4b4d;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.comment-star-input:hover {
+  transform: scale(1.2);
+}
+
+.comment-star-input.active {
+  color: #f7b928;
+}
+
+/* Remove existing avatar styles that might conflict */
+.avatar-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3a3b3c;
+}
