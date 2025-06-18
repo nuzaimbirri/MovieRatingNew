@@ -1,64 +1,77 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true 
-  },
-  fullname: {
-    type: String,
-    required: true
-  },
-  password:{
-    type:String,
-    required: true,
-    minLength: 6 
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  followers:[
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      default: []
-    }
-  ],
-  followeing:[
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      default: []
-    }
-  ],
-  profileImg: {
-    type: String,
-    default: ""
-  },
-  coverImg: {
-    type: String,
-    default: ""
-  },
-  bio: {
-    type: String,
-    default: ""
-  },
-  link: {
-    type: String,
-    default: ""
-  },
-  likedPosts:[
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Post",
-      default: []
-    }
-  ]
-},{timestamps: true})
+	fullname: {
+		type: String,
+		required: true,
+		minLength: 6,
+		maxLength: 30,
+	},
+	username: {
+		type: String,
+		required: true,
+		minLength: 6,
+		maxLength: 30,
+		unique: true,
+	},
+	password: {
+		type: String,
+		required: true,
+		minLength: 6,
+	},
+	email: {
+		type: String,
+		required: true,
+		maxLength: 50,
+		unique: true,
+	},
+	profileImg: {
+		type: String,
+		default: "",
+	},
+	coverImg: {
+		type: String,
+		default: "",
+	},
+	bio: {
+		type: String,
+		default: "",
+		maxLength: 150,
+	},
+	link: {
+		type: String,
+		default: "",
+	},
+	followers: {
+		type: [mongoose.Schema.Types.ObjectId],
+		ref: "User",
+		default: [],
+	},
+	followeing: {
+		type: [mongoose.Schema.Types.ObjectId],
+		ref: "User",
+		default: [],
+	},
+	notifications: {
+		type: [mongoose.Schema.Types.ObjectId],
+		ref: "Notiffication",
+		default: [],
+	},
+	likedPosts: {
+		type: [mongoose.Schema.Types.ObjectId],
+		ref: "Post",
+		default: [],
+	},
+	createdAt: {
+		type: Date,
+		default: Date.now,
+	},
+	watchlist: [{
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Post'
+	}],
+}, { timestamps: true });
 
-const User = mongoose.model("User",userSchema)
+const User = mongoose.model("User", userSchema);
 
-export default User
+export default User;

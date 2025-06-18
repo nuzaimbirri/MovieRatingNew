@@ -8,10 +8,12 @@ import { FaStar } from 'react-icons/fa';
 import { BiComment, BiLike } from 'react-icons/bi';
 import { formatDistanceToNow } from 'date-fns';
 import { id } from 'date-fns/locale';
+import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 
 const DetailFilmPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { data: authUser } = useQuery({ queryKey: ["authUser"] });
   const queryClient = useQueryClient();
   const [comment, setComment] = useState("");
   const [commentRating, setCommentRating] = useState(0);
@@ -115,6 +117,32 @@ const DetailFilmPage = () => {
     },
     onSettled: () => {
       queryClient.invalidateQueries(['film', id]);
+    }
+  });
+
+  const isInWatchlist = authUser?.watchlist?.includes(id);
+
+  const { mutate: toggleWatchlist, isLoading: watchlistPending } = useMutation({
+    mutationFn: async () => {
+      const res = await fetch("/api/watchlist/toggle", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ postId: id }),
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || "Gagal update watchlist");
+      }
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["authUser"]);
+      queryClient.invalidateQueries(["watchlist"]);
+      toast.success(isInWatchlist ? "Dihapus dari Watchlist" : "Ditambahkan ke Watchlist");
+    },
+    onError: (error) => {
+      toast.error(error.message);
     }
   });
 
@@ -260,8 +288,17 @@ const DetailFilmPage = () => {
               alt={film?.movieTitle}
               className="movie-poster"
             />
-            <button className="add-watchlist-button">
-              + Add to Watchlist
+            <button
+              className="add-watchlist-button"
+              onClick={() => toggleWatchlist()}
+              disabled={watchlistPending}
+              style={{ display: "flex", alignItems: "center", gap: 8 }}
+            >
+              {watchlistPending
+                ? "Memproses..."
+                : isInWatchlist
+                  ? (<><FaBookmark style={{ color: "#fbbf24" }} /> Remove from Watchlist</>)
+                  : (<><FaRegBookmark /> Add to Watchlist</>)}
             </button>
           </div>
 

@@ -101,7 +101,10 @@ export const logout = async (req,res)=>{
 export const getMe = async (req,res)=>{
   try {
     const user = await User.findById(req.user._id).select("-password");
-    res.status(200).json(user)
+    res.status(200).json({
+      ...user.toObject(),
+      watchlist: user.watchlist.map(id => id.toString())
+    });
     
   } catch (error) {
     console.log("error in the getMe func in auth controller", error.message)

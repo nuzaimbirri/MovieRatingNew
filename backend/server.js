@@ -11,6 +11,7 @@ import usersRoutes from "./routes/user.route.js";
 import postsRoutes from "./routes/post.route.js";
 import notificationsRoutes from "./routes/notification.route.js";
 import tmdbRoutes from './routes/tmdb.js'; // pastikan ekstensi .js ada jika pakai ES Modules
+import watchlistRoutes from "./routes/watchlist.route.js";
 import connectMongoDB from "./db/connectToMongo.js";
 
 dotenv.config(); // Load .env file
@@ -62,6 +63,7 @@ app.use("/api/users", usersRoutes);
 app.use("/api/posts", postsRoutes);
 app.use("/api/notifications", notificationsRoutes);
 app.use("/api/tmdb", tmdbRoutes);
+app.use('/api/watchlist', watchlistRoutes);
 
 // Cek mode produksi
 const env = process.env.NODE_ENV?.trim() || "";

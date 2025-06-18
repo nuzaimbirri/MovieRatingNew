@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Posts from "../../components/common/Posts";
 import ProfileHeaderSkeleton from "../../components/skeletons/ProfileHeaderSkeleton";
 import EditProfileModal from "./EditProfileModal";
+import Watchlist from "./Watchlist";
 
 import { POSTS } from "../../utils/db/dummy";
 
@@ -224,11 +225,23 @@ const ProfilePage = () => {
 										<div className='profilePage__container__showPostOrLikes__btn__line' />
 									)}
 								</div>
+								{/* Tambahkan tab baru untuk watchlist */}
+								<div
+									className={`profilePage__container__showPostOrLikes__btn ${feedType == "watchlist"? "active": ""}`}
+									onClick={() => setFeedType("watchlist")}
+								>
+									Watchlist
+									{feedType === "watchlist" && (
+										<div className='profilePage__container__showPostOrLikes__btn__line' />
+									)}
+								</div>
 							</div>
 						</>
 					)}
 
 					<Posts feedType={feedType} username={username} userId={user?._id}/>
+					{/* Render watchlist jika feedType adalah watchlist */}
+					{feedType === "watchlist" && <Watchlist userId={user?._id} />}
 				</div>
 			</div>
 		</>
