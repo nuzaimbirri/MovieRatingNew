@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import MovieCard from "../../components/MovieCard";
+import MovieCard from "../../components/MovieCardWatch";
 import LoadingSpinner from "../../components/common/LoadingSpinner";
 import PropTypes from "prop-types";
 import "./Watchlist.css";
