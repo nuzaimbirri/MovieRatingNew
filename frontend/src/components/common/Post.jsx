@@ -320,11 +320,7 @@ const Post = ({ post }) => {
 									<button className="outline-none">close</button>
 								</form>
 							</dialog>
-							<div className="post__content__postInfo__firstPart__replys">
-								<BiRepost className="post__content__postInfo__firstPart__replys__icon" />
-								<span className="">0</span>
-							</div>
-							<div className="post__content__postInfo__firstPart__likes" onClick={handleLikePost}>
+									<div className="post__content__postInfo__firstPart__likes" onClick={handleLikePost} style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center' }}>
 								{isLiked && !likeUnlikePending ? (
 									<FaHeart className="post__content__postInfo__firstPart__likes__icon active" />
 								) : (
@@ -344,15 +340,16 @@ const Post = ({ post }) => {
 									e.stopPropagation();
 									if (!watchlistPending) toggleWatchlist();
 								}}
-								className="post__content__postInfo__seconedPart__icon"
+								className="post__content__postInfo__seconedPart__icon bookmark-btn"
 								disabled={watchlistPending}
+								style={{ background: 'rgba(0,0,0,0.85)', border: 'none', boxShadow: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
 							>
 								{watchlistPending ? (
 									<LoadingSpinner size="sm" />
 								) : isInWatchlist ? (
-									<FaBookmark style={{ color: "#fbbf24" }} />
+									<FaBookmark style={{ color: "#EAB93B", fontSize: '1.2rem' }} />
 								) : (
-									<FaRegBookmark />
+									<FaRegBookmark style={{ color: "", fontSize: '1.2rem' }} />
 								)}
 							</button>
 						</div>
