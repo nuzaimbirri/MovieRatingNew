@@ -104,7 +104,7 @@
         .post__content__postInfo__firstPart__comments__icon,
         .post__content__postInfo__firstPart__replys__icon,
         .post__content__postInfo__firstPart__likes__icon {
-          color: #fbbf24;
+          // color: #fbbf24;
           font-size: 1.3rem;
           cursor: pointer;
           transition: color 0.2s;
@@ -117,13 +117,13 @@
         }
       }
       .post__content__postInfo__seconedPart__icon {
-        color: #bdbdbd;
+         color: #464343;
         font-size: 1.2rem;
         cursor: pointer;
         transition: color 0.2s;
       }
       .post__content__postInfo__seconedPart__icon:hover {
-        color: #fbbf24;
+         color: #1e1d1c;
       }
     }
   }

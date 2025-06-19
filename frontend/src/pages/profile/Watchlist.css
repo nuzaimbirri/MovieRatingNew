@@ -13,7 +13,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 28px;
-  color: #ffd700;
+  color: #ffe066;
   letter-spacing: 0.5px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
   text-align: left;
@@ -77,17 +77,42 @@
 }
 .movie-card .movie-title {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 4px;
-  color: #ffd700;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.18);
 }
 .movie-card .movie-meta {
-  font-size: 0.9rem;
-  color: #aaa;
+  font-size: 0.95rem;
+  color: #bdbdbd;
   margin-bottom: 4px;
 }
 .movie-card .movie-genre {
-  color: #fbbf24;
-  font-size: 0.9rem;
+  color: #ffd700;
+  font-size: 0.95rem;
   margin-left: 8px;
+  font-weight: 500;
+}
+.movie-card .movie-rating {
+  color: #ffe066;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.movie-card .movie-director {
+  color: #bdbdbd;
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+
+/* Perbaiki warna link agar tidak terlalu terang */
+.movie-card a,
+.movie-card a:visited {
+  color: #ffe066;
+  text-decoration: none;
+}
+
+.movie-card a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
